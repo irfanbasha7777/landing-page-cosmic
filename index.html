@@ -547,65 +547,6 @@
             font-size: 15px;
         }
 
-        /* REAL SCREENSHOT GALLERY */
-        .gallery {
-            padding: 80px 20px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            transition: transform 0.4s ease, border-color 0.4s ease;
-            background: var(--surface-elevated);
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 30px 60px rgba(10, 132, 255, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            object-position: top;
-            display: block;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            margin-bottom: 16px;
-        }
-
-        .gallery-label {
-            padding: 0 8px 8px 8px;
-            background: transparent;
-            font-weight: 600;
-            font-size: 16px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .gallery-label span {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
         /* Pricing */
         .pricing {
             text-align: center;
@@ -749,7 +690,7 @@
                 </svg>
             </button>
             <!-- Link this to your Gumroad URL later -->
-            <a href="#pricing" class="btn btn-primary">Pre-Order Now</a>
+            <a href="#pricing" class="btn btn-primary">Download now</a>
         </div>
     </nav>
 
@@ -767,12 +708,12 @@
         
         <div class="hero-cta">
             <a href="#pricing" class="btn btn-accent" style="padding: 16px 32px; font-size: 16px;">
-                Pre-Order Lifetime Access
+                Download Now Lifetime Access
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <div class="price-tag">
                 <s>$69.00</s>
-                <strong style="color: var(--text-main); font-size: 18px;">$29.00 One-Time</strong>
+                <strong style="color: var(--text-main); font-size: 18px;">$9.99 One-Time</strong>
             </div>
         </div>
 
@@ -949,46 +890,6 @@
         </div>
     </section>
 
-    <!-- ACTUAL SCREENSHOT GALLERY -->
-    <section class="gallery">
-        <div class="reveal" style="text-align: center;">
-            <h2 style="font-size: 36px; font-weight: 700; letter-spacing: -1px;">Inside the Terminal</h2>
-            <p style="color: var(--text-muted); margin-top: 12px; font-size: 18px;">A look at the crisp, data-dense interface.</p>
-        </div>
-
-        <div class="gallery-grid">
-            <div class="gallery-item reveal">
-                <img id="gal-img-1" src="bandicam%202026-03-25%2002-32-05-525.jpg" alt="Main Dashboard" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1C1C1E/0A84FF?text=Main+Dashboard';">
-                <div class="gallery-label">Main Dashboard <span>KPIs & Heatmap</span></div>
-            </div>
-            
-            <div class="gallery-item reveal">
-                <img id="gal-img-2" src="bandicam%202026-03-25%2002-32-12-171.jpg" alt="Trade History" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1C1C1E/0A84FF?text=Trade+History';">
-                <div class="gallery-label">Trade History <span>Filter & Review</span></div>
-            </div>
-
-            <div class="gallery-item reveal">
-                <img id="gal-img-3" src="bandicam%202026-03-25%2002-32-25-302.jpg" alt="Charts & Analytics 1" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1C1C1E/0A84FF?text=Charts+%26+Analytics';">
-                <div class="gallery-label">Charts & Analytics <span>Macro Trends</span></div>
-            </div>
-
-            <div class="gallery-item reveal">
-                <img id="gal-img-4" src="bandicam%202026-03-25%2002-32-39-692.jpg" alt="Charts & Analytics 2" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1C1C1E/0A84FF?text=Deep+Dive+Data';">
-                <div class="gallery-label">Deep Dive Data <span>Setup Quality & Profiling</span></div>
-            </div>
-
-            <div class="gallery-item reveal">
-                <img id="gal-img-5" src="bandicam%202026-03-25%2002-32-46-734.jpg" alt="Risk Calculator" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1C1C1E/0A84FF?text=Risk+Calculator';">
-                <div class="gallery-label">Risk Engine <span>Drawdown & Survival</span></div>
-            </div>
-
-            <div class="gallery-item reveal">
-                <img id="gal-img-6" src="bandicam%202026-03-25%2002-32-51-651.jpg" alt="Playbook & Rules" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1C1C1E/0A84FF?text=Playbook+%26+Rules';">
-                <div class="gallery-label">Playbook Manager <span>Custom Checklists</span></div>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing -->
     <section id="pricing" class="pricing reveal">
         <h2 style="font-size: 40px; font-weight: 800; letter-spacing: -1px;">Stop paying subscriptions.</h2>
@@ -997,7 +898,7 @@
         <div class="pricing-card">
             <div style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent); font-size: 12px;">Pre-Order Beta Access</div>
             <div class="price-huge">
-                <span>$69</span> $29
+                <span>$69.00</span> $9.99
             </div>
             <p style="color: var(--text-muted);">One-time payment. Yours forever.</p>
 
@@ -1009,8 +910,8 @@
                 <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Lifetime Updates</li>
             </ul>
 
-            <!-- Replace '#' with your Gumroad Link -->
-            <a href="#" class="btn btn-accent" style="width: 100%; max-width: 300px; padding: 18px; font-size: 16px;">Pre-Order on Gumroad</a>
+            <!-- Replace '#' with your Download Link -->
+            <a href="#" class="btn btn-accent" style="width: 100%; max-width: 300px; padding: 18px; font-size: 16px;">Download now</a>
             <div style="font-size: 12px; color: var(--text-muted); margin-top: 16px;">Releasing end of month. Secure the 50% discount now.</div>
         </div>
     </section>
