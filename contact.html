@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | SocialbyUswa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --black:#0B0B0B; --white:#fff; --gray:#F5F5F5; --accent:#7A1C2E; --radius:24px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"Plus Jakarta Sans",sans-serif; color:var(--black); background:var(--white); }
+    .container { width:min(860px, 92%); margin: 36px auto 60px; }
+    .panel { background:var(--gray); border:1px solid rgba(11,11,11,.1); border-radius:var(--radius); padding: clamp(22px, 4vw, 42px); }
+    h1 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 8px; }
+    p { color:#5E5E5E; margin-bottom: 22px; }
+    form { display:grid; gap: 14px; }
+    .grid { display:grid; gap:14px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+    label { font-size: .92rem; font-weight:600; display:block; margin-bottom:7px; }
+    input, textarea, select {
+      width:100%; border:1px solid rgba(11,11,11,.18); border-radius:16px; padding:12px 14px;
+      font: inherit; background:#fff;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .submit {
+      margin-top: 8px; padding: 14px 18px; border: none; border-radius: var(--radius);
+      background: var(--accent); color: #fff; font-weight: 700; cursor:pointer;
+    }
+    .help { font-size:.9rem; margin-top:12px; }
+    .help code { background:#fff; border:1px solid rgba(11,11,11,.12); padding:2px 8px; border-radius:999px; }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    @media (max-width:700px){ .grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a href="index.html">← Back to home</a>
+    <section class="panel" style="margin-top:14px;">
+      <h1>Work With SocialbyUswa</h1>
+      <p>Complete this form and you'll be redirected to WhatsApp to continue instantly.</p>
+
+      <form id="contactForm">
+        <div class="grid">
+          <div><label for="name">Name</label><input id="name" name="name" required /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+        </div>
+
+        <div class="grid">
+          <div><label for="business">Business Name</label><input id="business" name="business" required /></div>
+          <div><label for="instagram">Instagram Handle</label><input id="instagram" name="instagram" placeholder="@yourhandle" required /></div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="budget">Budget</label>
+            <select id="budget" name="budget" required>
+              <option value="">Select budget range</option>
+              <option>$300 - $500</option>
+              <option>$500 - $1,000</option>
+              <option>$1,000 - $2,000</option>
+              <option>$2,000+</option>
+            </select>
+          </div>
+          <div><label for="services">Services Needed</label><input id="services" name="services" placeholder="Content, strategy, management..." required /></div>
+        </div>
+
+        <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+
+        <button class="submit" type="submit">Continue on WhatsApp</button>
+      </form>
+
+      <p class="help">Editable number placeholder: <code>WHATSAPP_NUMBER_HERE</code></p>
+    </section>
+  </main>
+
+  <script>
+    const WHATSAPP_NUMBER_HERE = 'WHATSAPP_NUMBER_HERE'; // Replace with country code + number, e.g. 923001234567
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const data = new FormData(this);
+      const lines = [
+        'New Inquiry - SocialbyUswa',
+        `Name: ${data.get('name')}`,
+        `Email: ${data.get('email')}`,
+        `Business Name: ${data.get('business')}`,
+        `Instagram: ${data.get('instagram')}`,
+        `Budget: ${data.get('budget')}`,
+        `Services Needed: ${data.get('services')}`,
+        `Message: ${data.get('message')}`
+      ];
+
+      const text = encodeURIComponent(lines.join('\n'));
+      window.location.href = `https://wa.me/${WHATSAPP_NUMBER_HERE}?text=${text}`;
+    });
+  </script>
+</body>
+</html>
